@@ -10,11 +10,9 @@ type CaseStudy = {
   href: string;
 };
 
-const caseStudies: CaseStudy[] = [
-  { title: "Fair Sides", tag: "Product design · Web app", href: "/work/fair-sides" },
-  { title: "RK Plumbing", tag: "Brand · Website", href: "/work/rk-plumbing" },
-  { title: "Case Study 03", tag: "Product design", href: "/work/case-study-03" },
-];
+type WorkGridProps = {
+  caseStudies: CaseStudy[];
+};
 
 const container: Variants = {
   hidden: {},
@@ -32,7 +30,7 @@ const card: Variants = {
   },
 };
 
-export default function WorkGrid() {
+export default function WorkGrid({ caseStudies }: WorkGridProps) {
   return (
     <motion.section
       className="mx-auto max-w-6xl px-6 py-32"

@@ -5,7 +5,14 @@ import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 
 const EASE_EMPHASIS = [0.16, 1, 0.3, 1] as const;
 
-export default function Hero() {
+type HeroProps = {
+  nameLine1: string;
+  nameLine2?: string;
+  tagline: string;
+  scrollHint: string;
+};
+
+export default function Hero({ nameLine1, nameLine2, tagline, scrollHint }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -66,9 +73,13 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            ROB
-            <br />
-            KARPAVICIUS
+            {nameLine1}
+            {nameLine2 && (
+              <>
+                <br />
+                {nameLine2}
+              </>
+            )}
           </motion.h1>
 
           <motion.p
@@ -78,8 +89,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            Senior product designer building considered, well-crafted
-            digital products — from first principles to shipped detail.
+            {tagline}
           </motion.p>
 
           <motion.p
@@ -89,7 +99,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            Scroll to explore
+            {scrollHint}
           </motion.p>
         </motion.div>
       </div>
