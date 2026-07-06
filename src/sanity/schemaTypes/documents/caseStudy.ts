@@ -95,30 +95,12 @@ export const caseStudy = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "gallery",
-      title: "Gallery",
-      type: "array",
-      group: "content",
-      of: [
-        defineArrayMember({
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            defineField({
-              name: "alt",
-              title: "Alternative text",
-              type: "string",
-              validation: (rule) => rule.required(),
-            }),
-          ],
-        }),
-      ],
-    }),
-    defineField({
       name: "body",
       title: "Body",
       type: "array",
       group: "content",
+      description:
+        "Build the case study top to bottom. Use the Image button in the toolbar to drop a picture inline with its own caption, right where it belongs in the story.",
       of: [
         defineArrayMember({
           type: "block",

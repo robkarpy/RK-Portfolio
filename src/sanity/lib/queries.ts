@@ -42,12 +42,6 @@ export const CASE_STUDY_BY_SLUG_QUERY = defineQuery(`
       hotspot,
       crop
     },
-    gallery[]{
-      asset->{ url, metadata { lqip, dimensions } },
-      alt,
-      hotspot,
-      crop
-    },
     body[]{
       ...,
       _type == "ptImage" => {

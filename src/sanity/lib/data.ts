@@ -97,7 +97,6 @@ export type CaseStudyDetail = {
   tools?: string[];
   liveUrl?: string;
   coverImage: SanityImageAsset;
-  gallery?: SanityImageAsset[];
   body: PortableTextBlockWithMedia[];
 };
 
