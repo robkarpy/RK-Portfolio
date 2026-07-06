@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color tokens */
+  --color-void: #0d0d0d;
+  --color-dark-lift: #161616;
+  --color-cloud: #f0eee8;
+  --color-reflex: #1e2fa3;
+  --color-reflex-mid: #3d50d4;
+  --color-periwinkle: #7b8cde;
+  --color-grid-line: rgba(240, 238, 232, 0.12);
+
+  /* Motion tokens */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+  --stagger-offset: 100ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-void);
+  color: var(--color-cloud);
+}
+
+/* Respect reduced motion preference everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
